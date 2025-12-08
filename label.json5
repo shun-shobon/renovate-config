@@ -1,0 +1,12 @@
+// ラベル設定
+{
+	$schema: "https://docs.renovatebot.com/renovate-schema.json",
+	packageRules: [
+		// GitHub Actionsは`ci(github-actions):`というコミットメッセージを使用する
+		{
+			matchManagers: ["github-actions"],
+			semanticCommitScope: "github-actions",
+			semanticCommitType: "ci",
+		},
+	],
+}
