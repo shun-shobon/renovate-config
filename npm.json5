@@ -1,13 +1,31 @@
 {
 	$schema: "https://docs.renovatebot.com/renovate-schema.json",
 	extends: [
-		// Unpablish される可能性がある間は更新しない
+		// Unpublishされる可能性がある間は更新しない
 		"security:minimumReleaseAgeNpm",
 	],
-	npm: {
-		extends: [
-			// peer depsの更新はbumpではなくwidenで行う
-			":widenPeerDependencies",
-		],
-	},
+	packageRules: [
+		// peer depsの更新はbumpではなくwidenで行う
+		{
+			matchManagers: ["npm"],
+			extends: [":widenPeerDependencies"]
+		},
+		// Node.jsの更新をLTSまでに限定する
+		{
+			extends: ["group:nodeJs"],
+			allowedVersions: "^24.0.0",
+		},
+		{
+			matchManagers: ["npm"],
+			matchPackageNames: ["@types/node"],
+			allowedVersions: "^24.0.0",
+		},
+		// @shun-shobon/style-guideはすぐに更新する
+		{
+			matchManagers: ["npm"],
+			matchPackageNames: ["@shun-shobon/style-guide"],
+			minimumReleaseAge: null,
+			schedule: ["at any time"],
+		},
+	],
 }
