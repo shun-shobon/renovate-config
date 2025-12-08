@@ -2,8 +2,6 @@
 	"$schema": "https://docs.renovatebot.com/renovate-schema.json",
 	"extends": [
 		"github>shun-shobon/renovate-config:base.json5",
-		"github>shun-shobon/renovate-config:npm.json5",
-		"github>shun-shobon/renovate-config:deno.json5",
-		"github>shun-shobon/renovate-config:asdf.json5"
+		"github>shun-shobon/renovate-config:npm.json5"
 	]
 }

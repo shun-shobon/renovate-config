@@ -1,23 +1,13 @@
 {
 	$schema: "https://docs.renovatebot.com/renovate-schema.json",
 	extends: [
-		// Unpablish される可能性がある3日間の間は更新しない
-		"npm:unpublishSafe",
+		// Unpablish される可能性がある間は更新しない
+		"security:minimumReleaseAgeNpm",
 	],
 	npm: {
 		extends: [
-			// Linter をまとめて更新する
-			"group:linters",
-			// `@types/node` のメジャーバージョンは更新しない
-			"helpers:disableTypesNodeMajor",
 			// peer depsの更新はbumpではなくwidenで行う
 			":widenPeerDependencies",
-		],
-		packageRules: [
-			{
-				matchPackageNames: ["@shun-shobon/style-guide"],
-				groupName: "linters",
-			},
 		],
 	},
 }

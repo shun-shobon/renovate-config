@@ -3,7 +3,7 @@
 	$schema: "https://docs.renovatebot.com/renovate-schema.json",
 	extends: [
 		// 推奨設定
-		"config:recommended",
+		"config:best-practices",
 		// タイムゾーンを日本に設定
 		":timezone(Asia/Tokyo)",
 		// semantic commits を使用
@@ -15,7 +15,7 @@
 		// CIが全て成功したら自動マージする
 		":automergeRequireAllStatusChecks",
 		// 毎週更新を行う
-		"schedule:weekly",
+		"schedule:daily",
 		// ロックファイルを毎週更新する
 		":maintainLockFilesWeekly",
 	],
