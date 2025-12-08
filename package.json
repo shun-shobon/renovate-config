@@ -5,15 +5,16 @@
 	"description": "My personal Renovate config",
 	"author": "Shuntaro Nishizawa <me@s2n.tech> (https://s2n.tech)",
 	"license": "MIT",
-	"packageManager": "pnpm@9.15.4",
+	"private": true,
+	"packageManager": "pnpm@10.25.0",
 	"scripts": {
 		"format": "prettier --write .",
 		"format:check": "prettier --check .",
 		"lint": "renovate-config-validator default.json *.json5"
 	},
 	"devDependencies": {
-		"@shun-shobon/style-guide": "^0.2.0",
-		"prettier": "^3.4.2",
-		"renovate": "^39.145.1"
+		"@shun-shobon/style-guide": "1.2.0",
+		"prettier": "3.7.4",
+		"renovate": "42.40.0"
 	}
 }
