@@ -8,11 +8,11 @@
 		// peer depsの更新はbumpではなくwidenで行う
 		{
 			matchManagers: ["npm"],
-			extends: [":widenPeerDependencies"]
+			extends: [":widenPeerDependencies"],
 		},
 		// Node.jsの更新をLTSまでに限定する
 		{
-			extends: ["group:nodeJs"],
+			matchDatasources: ["node-version"],
 			allowedVersions: "^24.0.0",
 		},
 		{
