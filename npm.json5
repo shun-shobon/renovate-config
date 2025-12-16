@@ -10,6 +10,7 @@
 			matchManagers: ["npm"],
 			extends: [":widenPeerDependencies"],
 		},
+
 		// Node.jsの更新をLTSまでに限定する
 		{
 			matchDatasources: ["node-version"],
@@ -20,6 +21,7 @@
 			matchPackageNames: ["@types/node"],
 			allowedVersions: "^24.0.0",
 		},
+
 		// @shun-shobon/style-guideはすぐに更新する
 		{
 			matchManagers: ["npm"],

@@ -4,26 +4,35 @@
 	extends: [
 		// 推奨設定
 		"config:best-practices",
+
 		// タイムゾーンを日本に設定
 		":timezone(Asia/Tokyo)",
+
 		// semantic commits を使用
 		":semanticCommits",
+
 		// PRを直ぐに作るようにする
 		":prImmediately",
+
 		// マイナーバージョンアップデートまでは自動マージを使用
 		":automergeMinor",
+
 		// CIが全て成功したら自動マージする
 		":automergeRequireAllStatusChecks",
-		// 毎週更新を行う
+
+		// 毎日更新を行う
 		"schedule:daily",
+
 		// ロックファイルを毎週更新する
 		":maintainLockFilesWeekly",
 	],
 	// バージョンアップデートはbumpを使用
 	// https://docs.renovatebot.com/configuration-options/#rangestrategy
 	rangeStrategy: "bump",
+
 	// プラットフォーム(GitHub)の自動マージ機能を使用
 	platformAutomerge: true,
+
 	// PRの時間辺りのリミットを無効化
 	prHourlyLimit: 0,
 }
