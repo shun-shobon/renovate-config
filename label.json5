@@ -1,6 +1,11 @@
 // ラベル設定
 {
 	$schema: "https://docs.renovatebot.com/renovate-schema.json",
+
+	// PRやダッシュボードには`dependencies`というラベルを付ける
+	labels: ["dependencies"],
+	dependencyDashboardLabels: ["dependencies"],
+
 	packageRules: [
 		// GitHub Actionsは`ci(github-actions):`というコミットメッセージを使用する
 		{
