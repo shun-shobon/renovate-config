@@ -13,7 +13,7 @@
 		"lint": "renovate-config-validator default.json *.json5"
 	},
 	"devDependencies": {
-		"@shun-shobon/style-guide": "1.2.0",
+		"@shun-shobon/style-guide": "2.2.4",
 		"prettier": "3.7.4",
 		"renovate": "42.40.0"
 	}
