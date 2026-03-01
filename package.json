@@ -15,6 +15,6 @@
 	"devDependencies": {
 		"@shun-shobon/style-guide": "1.2.0",
 		"prettier": "3.7.4",
-		"renovate": "42.40.0"
+		"renovate": "43.43.0"
 	}
 }
