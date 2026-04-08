@@ -8,6 +8,6 @@ runs:
       uses: jdx/mise-action@5228313ee0372e111a38da051671ca30fc5a96db # v3.6.3
 
     - name: Setup | pnpm
-      uses: pnpm/action-setup@fc06bc1257f339d1d5d8b3a19a8cae5388b55320 # v4.4.0
+      uses: pnpm/action-setup@fc06bc1257f339d1d5d8b3a19a8cae5388b55320 # v5.0.0
       with:
         cache: true
