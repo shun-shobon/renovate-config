@@ -2,14 +2,10 @@
 
 name: ci
 on:
+  pull_request:
   push:
     branches:
       - main
-  pull_request:
-    types:
-      - opened
-      - synchronize
-      - reopened
 
 permissions:
   contents: read
@@ -66,3 +62,14 @@ jobs:
           RENOVATE_BASE_BRANCHES: ${{ github.sha }}
           RENOVATE_CONFIG_FILE: ./renovate.json
           LOG_LEVEL: debug
+
+  status-check:
+    needs: [lint, format, test]
+    if: ${{ always() }}
+    runs-on: ubuntu-slim
+    timeout-minutes: 5
+    steps:
+      - name: Verify | All CI jobs succeeded
+        env:
+          RESULTS: ${{ toJSON(needs.*.result) }}
+        run: jq -e 'all(.[]; . == "success")' <<< "$RESULTS"
