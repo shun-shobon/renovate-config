@@ -1,13 +1,11 @@
+# This workflow is managed by gh actions-lock.
+
 name: ci
 on:
+  pull_request:
   push:
     branches:
       - main
-  pull_request:
-    types:
-      - opened
-      - synchronize
-      - reopened
 
 permissions:
   contents: read
@@ -19,10 +17,10 @@ jobs:
     timeout-minutes: 5
     steps:
       - name: Setup | Checkout
-        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        uses: actions/checkout@v7.0.1
 
       - name: Setup | Development environment
-        uses: ./.github/actions/setup
+        uses: $/.github/actions/setup
 
       - name: Run | Lint
         run: pnpm run lint
@@ -32,10 +30,10 @@ jobs:
     timeout-minutes: 5
     steps:
       - name: Setup | Checkout
-        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        uses: actions/checkout@v7.0.1
 
       - name: Setup | Development environment
-        uses: ./.github/actions/setup
+        uses: $/.github/actions/setup
 
       - name: Run | Format
         run: pnpm run format:check
@@ -45,10 +43,10 @@ jobs:
     timeout-minutes: 5
     steps:
       - name: Setup | Checkout
-        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        uses: actions/checkout@v7.0.1
 
       - name: Setup | Development environment
-        uses: ./.github/actions/setup
+        uses: $/.github/actions/setup
 
       - name: Run | Test
         run: |
@@ -64,3 +62,14 @@ jobs:
           RENOVATE_BASE_BRANCHES: ${{ github.sha }}
           RENOVATE_CONFIG_FILE: ./renovate.json
           LOG_LEVEL: debug
+
+  status-check:
+    needs: [lint, format, test]
+    if: ${{ always() }}
+    runs-on: ubuntu-slim
+    timeout-minutes: 5
+    steps:
+      - name: Verify | All CI jobs succeeded
+        env:
+          RESULTS: ${{ toJSON(needs.*.result) }}
+        run: jq -e 'all(.[]; . == "success")' <<< "$RESULTS"
