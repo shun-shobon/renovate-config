@@ -1,20 +1,19 @@
 {
 	"name": "@shun-shobon/renovate-config",
 	"version": "0.1.0",
-	"type": "module",
-	"description": "My personal Renovate config",
-	"author": "Shuntaro Nishizawa <me@s2n.tech> (https://s2n.tech)",
-	"license": "MIT",
 	"private": true,
-	"packageManager": "pnpm@12.10.1",
+	"description": "My personal Renovate config",
+	"license": "MIT",
+	"author": "Shuntaro Nishizawa <me@s2n.tech> (https://s2n.tech)",
+	"type": "module",
 	"scripts": {
-		"format": "prettier --write .",
-		"format:check": "prettier --check .",
+		"format": "oxfmt",
+		"format:check": "oxfmt --check",
 		"lint": "renovate-config-validator --strict --no-global default.json *.json5"
 	},
 	"devDependencies": {
-		"@shun-shobon/style-guide": "5.1.1",
-		"prettier": "3.9.9",
+		"oxfmt": "0.72.0",
 		"renovate": "44.142.1"
-	}
+	},
+	"packageManager": "pnpm@12.10.1"
 }
