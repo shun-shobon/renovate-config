@@ -21,11 +21,8 @@ jobs:
       - name: Setup | Checkout
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
 
-      - name: Setup | Node.js
-        uses: ./.github/actions/setup-node
-
-      - name: Setup | Install dependencies
-        run: pnpm install --frozen-lockfile
+      - name: Setup | Development environment
+        uses: ./.github/actions/setup
 
       - name: Run | Lint
         run: pnpm run lint
@@ -37,11 +34,8 @@ jobs:
       - name: Setup | Checkout
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
 
-      - name: Setup | Node.js
-        uses: ./.github/actions/setup-node
-
-      - name: Setup | Install dependencies
-        run: pnpm install --frozen-lockfile
+      - name: Setup | Development environment
+        uses: ./.github/actions/setup
 
       - name: Run | Format
         run: pnpm run format:check
@@ -53,11 +47,8 @@ jobs:
       - name: Setup | Checkout
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
 
-      - name: Setup | Node.js
-        uses: ./.github/actions/setup-node
-
-      - name: Setup | Install dependencies
-        run: pnpm install --frozen-lockfile
+      - name: Setup | Development environment
+        uses: ./.github/actions/setup
 
       - name: Run | Test
         run: |
