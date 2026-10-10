@@ -10,11 +10,11 @@
 	"scripts": {
 		"format": "prettier --write .",
 		"format:check": "prettier --check .",
-		"lint": "renovate-config-validator default.json *.json5"
+		"lint": "renovate-config-validator --strict --no-global default.json *.json5"
 	},
 	"devDependencies": {
 		"@shun-shobon/style-guide": "1.6.0",
 		"prettier": "3.7.4",
-		"renovate": "42.40.0"
+		"renovate": "44.142.1"
 	}
 }
