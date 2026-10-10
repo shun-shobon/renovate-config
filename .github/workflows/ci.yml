@@ -1,3 +1,5 @@
+# This workflow is managed by gh actions-lock.
+
 name: ci
 on:
   push:
@@ -19,10 +21,10 @@ jobs:
     timeout-minutes: 5
     steps:
       - name: Setup | Checkout
-        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        uses: actions/checkout@v7.0.1
 
       - name: Setup | Development environment
-        uses: ./.github/actions/setup
+        uses: $/.github/actions/setup
 
       - name: Run | Lint
         run: pnpm run lint
@@ -32,10 +34,10 @@ jobs:
     timeout-minutes: 5
     steps:
       - name: Setup | Checkout
-        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        uses: actions/checkout@v7.0.1
 
       - name: Setup | Development environment
-        uses: ./.github/actions/setup
+        uses: $/.github/actions/setup
 
       - name: Run | Format
         run: pnpm run format:check
@@ -45,10 +47,10 @@ jobs:
     timeout-minutes: 5
     steps:
       - name: Setup | Checkout
-        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        uses: actions/checkout@v7.0.1
 
       - name: Setup | Development environment
-        uses: ./.github/actions/setup
+        uses: $/.github/actions/setup
 
       - name: Run | Test
         run: |

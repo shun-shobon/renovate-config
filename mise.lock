@@ -2,6 +2,23 @@
 
 lockfile_version = 3
 
+[[tools."github:github/gh-actions-lock"]]
+version = "0.1.6"
+backend = "github:github/gh-actions-lock"
+specifiers = ["0.1.6"]
+
+[tools."github:github/gh-actions-lock"."platforms.linux-x64"]
+checksum = "sha256:4181ec1da5408b34b9a542a7ee5c6ce3a4d6ac815c7d0206a00ceca8a817f4e3"
+url = "https://github.com/github/gh-actions-lock/releases/download/v0.1.6/linux-amd64"
+url_api = "https://api.github.com/repos/github/gh-actions-lock/releases/assets/493218053"
+provenance = "github-attestations"
+
+[tools."github:github/gh-actions-lock"."platforms.macos-arm64"]
+checksum = "sha256:49f4a617de3f2bfdfb1c52ebe1cda21ba0f6125fb76fb44247e7e1909238b3fd"
+url = "https://github.com/github/gh-actions-lock/releases/download/v0.1.6/darwin-arm64"
+url_api = "https://api.github.com/repos/github/gh-actions-lock/releases/assets/493218012"
+provenance = "github-attestations"
+
 [[tools.node]]
 version = "24.21.0"
 backend = "core:node"
