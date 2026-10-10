@@ -1,0 +1,32 @@
+// セキュリティ設定
+{
+	$schema: "https://docs.renovatebot.com/renovate-schema.json",
+	extends: [
+		// PRに依存元リポジトリのOpenSSF Scorecardを表示する
+		"security:openssf-scorecard",
+	],
+
+	// OSVのデータベースを元に脆弱性修正PRを作る
+	osvVulnerabilityAlerts: true,
+
+	// 脆弱性修正PRはminimumReleaseAgeを無視するため、ラベルで区別する
+	vulnerabilityAlerts: {
+		labels: ["dependencies", "security"],
+	},
+
+	packageRules: [
+		// npm以外もUnpublishやタグの付け替えに備えて公開から3日間は更新しない
+		// 公開日時を返さないdatasourceを含めると永久に保留されるため対象を絞っている
+		{
+			matchDatasources: ["github-tags", "github-releases", "node-version"],
+			minimumReleaseAge: "3 days",
+			internalChecksFilter: "strict",
+		},
+		// 公開日時を判定できない更新は永久に保留されるため除外する
+		{
+			matchDatasources: ["github-tags", "github-releases", "node-version"],
+			matchUpdateTypes: ["pin", "replacement"],
+			minimumReleaseAge: null,
+		},
+	],
+}
