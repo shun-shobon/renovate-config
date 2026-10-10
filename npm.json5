@@ -11,6 +11,12 @@
 			extends: [":widenPeerDependencies"],
 		},
 
+		// lockFileMaintenanceを無効にしているため、更新の度に重複を解消する
+		{
+			matchManagers: ["npm"],
+			postUpdateOptions: ["pnpmDedupe"],
+		},
+
 		// Node.jsの更新をLTSまでに限定する
 		{
 			matchDatasources: ["node-version"],
