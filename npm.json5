@@ -1,39 +1,39 @@
 {
-	$schema: "https://docs.renovatebot.com/renovate-schema.json",
-	extends: [
-		// Unpublishされる可能性がある間は更新しない
-		"security:minimumReleaseAgeNpm",
-	],
-	packageRules: [
-		// peer depsの更新はbumpではなくwidenで行う
-		{
-			matchManagers: ["npm"],
-			extends: [":widenPeerDependencies"],
-		},
+  $schema: "https://docs.renovatebot.com/renovate-schema.json",
+  extends: [
+    // Unpublishされる可能性がある間は更新しない
+    "security:minimumReleaseAgeNpm",
+  ],
+  packageRules: [
+    // peer depsの更新はbumpではなくwidenで行う
+    {
+      matchManagers: ["npm"],
+      extends: [":widenPeerDependencies"],
+    },
 
-		// lockFileMaintenanceを無効にしているため、更新の度に重複を解消する
-		{
-			matchManagers: ["npm"],
-			postUpdateOptions: ["pnpmDedupe"],
-		},
+    // lockFileMaintenanceを無効にしているため、更新の度に重複を解消する
+    {
+      matchManagers: ["npm"],
+      postUpdateOptions: ["pnpmDedupe"],
+    },
 
-		// Node.jsの更新をLTSまでに限定する
-		{
-			matchDatasources: ["node-version"],
-			allowedVersions: "^24.0.0",
-		},
-		{
-			matchManagers: ["npm"],
-			matchPackageNames: ["@types/node"],
-			allowedVersions: "^24.0.0",
-		},
+    // Node.jsの更新をLTSまでに限定する
+    {
+      matchDatasources: ["node-version"],
+      allowedVersions: "^24.0.0",
+    },
+    {
+      matchManagers: ["npm"],
+      matchPackageNames: ["@types/node"],
+      allowedVersions: "^24.0.0",
+    },
 
-		// @shun-shobon/style-guideはすぐに更新する
-		{
-			matchManagers: ["npm"],
-			matchPackageNames: ["@shun-shobon/style-guide"],
-			minimumReleaseAge: null,
-			schedule: ["at any time"],
-		},
-	],
+    // @shun-shobon/style-guideはすぐに更新する
+    {
+      matchManagers: ["npm"],
+      matchPackageNames: ["@shun-shobon/style-guide"],
+      minimumReleaseAge: null,
+      schedule: ["at any time"],
+    },
+  ],
 }

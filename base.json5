@@ -1,29 +1,29 @@
 // 基本設定
 {
-	$schema: "https://docs.renovatebot.com/renovate-schema.json",
-	extends: [
-		// 推奨設定
-		"config:best-practices",
+  $schema: "https://docs.renovatebot.com/renovate-schema.json",
+  extends: [
+    // 推奨設定
+    "config:best-practices",
 
-		// タイムゾーンを日本に設定
-		":timezone(Asia/Tokyo)",
+    // タイムゾーンを日本に設定
+    ":timezone(Asia/Tokyo)",
 
-		// semantic commits を使用
-		":semanticCommits",
+    // semantic commits を使用
+    ":semanticCommits",
 
-		// マイナーバージョンアップデートまでは自動マージを使用
-		":automergeMinor",
+    // マイナーバージョンアップデートまでは自動マージを使用
+    ":automergeMinor",
 
-		// 毎日更新を行う
-		"schedule:daily",
+    // 毎日更新を行う
+    "schedule:daily",
 
-		// PRの作成数の制限を無効化
-		":disableRateLimiting",
-	],
-	// バージョンアップデートはbumpを使用
-	// https://docs.renovatebot.com/configuration-options/#rangestrategy
-	rangeStrategy: "bump",
+    // PRの作成数の制限を無効化
+    ":disableRateLimiting",
+  ],
+  // バージョンアップデートはbumpを使用
+  // https://docs.renovatebot.com/configuration-options/#rangestrategy
+  rangeStrategy: "bump",
 
-	// config:best-practices に含まれる :maintainLockFilesWeekly を打ち消す
-	lockFileMaintenance: { enabled: false },
+  // config:best-practices に含まれる :maintainLockFilesWeekly を打ち消す
+  lockFileMaintenance: { enabled: false },
 }

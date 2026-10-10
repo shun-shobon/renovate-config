@@ -17,3 +17,6 @@ trustPolicyExclude:
   - "@yarnpkg/libzip@3.2.2"
   - semver@5.7.2
   - semver@6.3.1
+
+minimumReleaseAgeExclude:
+  - "@shun-shobon/oxfmt-config"

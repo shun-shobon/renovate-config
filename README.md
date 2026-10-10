@@ -8,8 +8,8 @@ shun-shobon の個人リポジトリ向け Renovate の共有プリセット。
 
 ```json
 {
-	"$schema": "https://docs.renovatebot.com/renovate-schema.json",
-	"extends": ["github>shun-shobon/renovate-config"]
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": ["github>shun-shobon/renovate-config"]
 }
 ```
 
