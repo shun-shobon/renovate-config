@@ -13,7 +13,7 @@
 	},
 	"devDependencies": {
 		"oxfmt": "0.72.0",
-		"renovate": "44.149.2"
+		"renovate": "44.150.0"
 	},
 	"packageManager": "pnpm@12.11.2"
 }
