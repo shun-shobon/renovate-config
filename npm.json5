@@ -17,15 +17,11 @@
 			postUpdateOptions: ["pnpmDedupe"],
 		},
 
-		// Node.jsの更新をLTSまでに限定する
-		{
-			matchDatasources: ["node-version"],
-			allowedVersions: "^24.0.0",
-		},
+		// @iconify-jsonのアイコンセットは同じ日に更新されやすいため、1つのPRにまとめる
 		{
 			matchManagers: ["npm"],
-			matchPackageNames: ["@types/node"],
-			allowedVersions: "^24.0.0",
+			matchPackageNames: ["@iconify-json/*"],
+			groupName: "iconify-json",
 		},
 
 		// @shun-shobon/style-guideはすぐに更新する
