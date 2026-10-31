@@ -1,4 +1,11 @@
 {
 	"$schema": "https://docs.renovatebot.com/renovate-schema.json",
-	"extends": ["github>shun-shobon/renovate-config"]
+	"extends": ["github>shun-shobon/renovate-config"],
+	"packageRules": [
+		{
+			"description": "CI で動かす Renovate の engines が Node.js 24 しか許さないため、Renovate が対応するまで 24 に留める",
+			"matchDatasources": ["node-version"],
+			"allowedVersions": "^24.0.0"
+		}
+	]
 }
