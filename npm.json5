@@ -17,6 +17,13 @@
 			postUpdateOptions: ["pnpmDedupe"],
 		},
 
+		// @iconify-jsonのアイコンセットは同じ日に更新されやすいため、1つのPRにまとめる
+		{
+			matchManagers: ["npm"],
+			matchPackageNames: ["@iconify-json/*"],
+			groupName: "iconify-json",
+		},
+
 		// @shun-shobon/style-guideはすぐに更新する
 		{
 			matchManagers: ["npm"],
