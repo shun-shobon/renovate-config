@@ -12,7 +12,7 @@
 		"lint": "renovate-config-validator --strict --no-global default.json *.json5"
 	},
 	"devDependencies": {
-		"oxfmt": "0.74.0",
+		"oxfmt": "0.75.0",
 		"renovate": "44.184.1"
 	},
 	"packageManager": "pnpm@12.15.0"
