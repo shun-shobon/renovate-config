@@ -24,10 +24,10 @@
 			groupName: "iconify-json",
 		},
 
-		// @shun-shobon/style-guideはすぐに更新する
+		// 自分のlint・formatの設定はすぐに更新する
 		{
 			matchManagers: ["npm"],
-			matchPackageNames: ["@shun-shobon/style-guide"],
+			matchPackageNames: ["@shun-shobon/oxlint-config", "@shun-shobon/oxfmt-config"],
 			minimumReleaseAge: null,
 			schedule: ["at any time"],
 		},
