@@ -4,6 +4,10 @@
 	extends: [
 		// PRに依存元リポジトリのOpenSSF Scorecardを表示する
 		"security:openssf-scorecard",
+
+		// crate と PyPI も公開から3日間は更新しない
+		"security:minimumReleaseAgeCrate",
+		"security:minimumReleaseAgePypi",
 	],
 
 	// OSVのデータベースを元に脆弱性修正PRを作る
