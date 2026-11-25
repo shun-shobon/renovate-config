@@ -4,7 +4,7 @@
 
 	// PRやダッシュボードには`dependencies`というラベルを付ける
 	labels: ["dependencies"],
-	dependencyDashboardLabels: ["dependencies"],
+	dependencyDashboard: { labels: ["dependencies"] },
 
 	packageRules: [
 		// GitHub Actionsは`ci(github-actions):`というコミットメッセージを使用する
