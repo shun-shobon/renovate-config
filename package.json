@@ -15,5 +15,5 @@
 		"oxfmt": "0.79.0",
 		"renovate": "44.257.9"
 	},
-	"packageManager": "pnpm@12.22.0"
+	"packageManager": "pnpm@12.23.0"
 }
